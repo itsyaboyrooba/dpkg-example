@@ -1,0 +1,14 @@
+[Unit]
+Description=Service for dpkg-example
+
+[Service]
+ExecStart=../BuildDeb.sh
+StandardError=append:/var/log/dpkg-example/error.log
+StandardOutput=append:/var/log/dpkg-example/output.log
+SyslogIdentifier=<dpkg/example>
+Restart=on-failure
+StartLimitInterval=1
+
+[Install]
+WantedBy=multi-user.target
+

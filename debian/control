@@ -1,0 +1,11 @@
+Source: dpkg-example
+Section: base
+Priority: optional
+Maintainer: Rooba INC. <mathias.rooba@mingimeil.ee>
+
+Package: dpkg-example
+Provides: dpkg-example
+Conflicts: dpkg-example
+Replaces: dpkg-example
+Architecture: amd64
+Description: dpkg-example, provides system files

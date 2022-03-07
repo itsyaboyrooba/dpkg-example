@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE = 1
+
+%:
+		dh $@
+override_dh_installdeb:
+	dh_installdeb
+	find ${CURDIR}/debian/*/DEBIAN -name conffiles -delete
+
+%:
+		dh $@
+override_dh_shlibdeps:
+	dh_shlibdeps -l # Igasugused /lib folderid
+
+override_dh_install:
+	dh_install files/ /opt/
+	dh_install folder1/ /usr/lib/
+	dh_install folder2/ /etc/
+	
